@@ -6,6 +6,7 @@ import org.springframework.cloud.task.configuration.DefaultTaskConfigurer;
 import org.springframework.cloud.task.configuration.EnableTask;
 import org.springframework.cloud.task.configuration.TaskConfigurer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
@@ -13,10 +14,11 @@ import javax.sql.DataSource;
 @Configuration
 @EnableBatchProcessing(dataSourceRef = "spidbatchDS")
 @EnableTask
+@ComponentScan(basePackages = {"com.oxit.spid.core", "com.oxit.spid.repository"})
 public class BatchTaskConfiguration {
 
     @Bean
-    public TaskConfigurer taskConfigurer(@Qualifier("spidbatchDS") DataSource batchDataSource){
+    public TaskConfigurer taskConfigurer(@Qualifier("spidbatchDS") DataSource batchDataSource) {
         return new DefaultTaskConfigurer(batchDataSource);
     }
 

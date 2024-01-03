@@ -48,7 +48,7 @@ public class DataSourcesConfiguration {
         return new DataSourceProperties();
     }
 
-    @Bean
+    @Bean(name = {"spidSecurity", "spidSecurityDS"})
     @ConfigurationProperties("batch.datasource.spidsecurity.configuration")
     public DataSource spidSecurityDS() {
         return spidDataDSProperties().initializeDataSourceBuilder().type(HikariDataSource.class).build();
