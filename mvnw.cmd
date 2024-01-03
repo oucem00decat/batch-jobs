@@ -9,7 +9,7 @@
 @REM
 @REM    https://www.apache.org/licenses/LICENSE-2.0
 @REM
-@REM Unless required by applicable law or agreed to in writing,
+@REM Unless required by batchlicable law or agreed to in writing,
 @REM software distributed under the License is distributed on an
 @REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 @REM KIND, either express or implied.  See the License for the
@@ -18,7 +18,7 @@
 @REM ----------------------------------------------------------------------------
 
 @REM ----------------------------------------------------------------------------
-@REM Apache Maven Wrapper startup batch script, version 3.2.0
+@REM Apache Maven Wrbatcher startup batch script, version 3.2.0
 @REM
 @REM Required ENV vars:
 @REM JAVA_HOME - location of a JDK home dir
@@ -116,24 +116,24 @@ for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do s
 :endReadAdditionalConfig
 
 SET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"
-set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
-set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrbatcher\maven-wrbatcher.jar"
+set WRAPPER_LAUNCHER=org.apache.maven.wrbatcher.MavenWrbatcherMain
 
-set WRAPPER_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
+set WRAPPER_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrbatcher/maven-wrbatcher/3.2.0/maven-wrbatcher-3.2.0.jar"
 
-FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO (
-    IF "%%A"=="wrapperUrl" SET WRAPPER_URL=%%B
+FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrbatcher\maven-wrbatcher.properties") DO (
+    IF "%%A"=="wrbatcherUrl" SET WRAPPER_URL=%%B
 )
 
-@REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
-@REM This allows using the maven wrapper in projects that prohibit checking in binary data.
+@REM Extension to allow automatically downloading the maven-wrbatcher.jar from Maven-central
+@REM This allows using the maven wrbatcher in projects that prohibit checking in binary data.
 if exist %WRAPPER_JAR% (
     if "%MVNW_VERBOSE%" == "true" (
         echo Found %WRAPPER_JAR%
     )
 ) else (
     if not "%MVNW_REPOURL%" == "" (
-        SET WRAPPER_URL="%MVNW_REPOURL%/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
+        SET WRAPPER_URL="%MVNW_REPOURL%/org/apache/maven/wrbatcher/maven-wrbatcher/3.2.0/maven-wrbatcher-3.2.0.jar"
     )
     if "%MVNW_VERBOSE%" == "true" (
         echo Couldn't find %WRAPPER_JAR%, downloading it ...
@@ -153,18 +153,18 @@ if exist %WRAPPER_JAR% (
 )
 @REM End of extension
 
-@REM If specified, validate the SHA-256 sum of the Maven wrapper jar file
+@REM If specified, validate the SHA-256 sum of the Maven wrbatcher jar file
 SET WRAPPER_SHA_256_SUM=""
-FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO (
-    IF "%%A"=="wrapperSha256Sum" SET WRAPPER_SHA_256_SUM=%%B
+FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrbatcher\maven-wrbatcher.properties") DO (
+    IF "%%A"=="wrbatcherSha256Sum" SET WRAPPER_SHA_256_SUM=%%B
 )
 IF NOT %WRAPPER_SHA_256_SUM%=="" (
     powershell -Command "&{"^
        "$hash = (Get-FileHash \"%WRAPPER_JAR%\" -Algorithm SHA256).Hash.ToLower();"^
        "If('%WRAPPER_SHA_256_SUM%' -ne $hash){"^
-       "  Write-Output 'Error: Failed to validate Maven wrapper SHA-256, your Maven wrapper might be compromised.';"^
+       "  Write-Output 'Error: Failed to validate Maven wrbatcher SHA-256, your Maven wrbatcher might be compromised.';"^
        "  Write-Output 'Investigate or delete %WRAPPER_JAR% to attempt a clean download.';"^
-       "  Write-Output 'If you updated your Maven version, you need to update the specified wrapperSha256Sum property.';"^
+       "  Write-Output 'If you updated your Maven version, you need to update the specified wrbatcherSha256Sum property.';"^
        "  exit 1;"^
        "}"^
        "}"

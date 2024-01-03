@@ -10,7 +10,7 @@
 #
 #    https://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing,
+# Unless required by batchlicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
@@ -19,7 +19,7 @@
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-# Apache Maven Wrapper startup batch script, version 3.2.0
+# Apache Maven Wrbatcher startup batch script, version 3.2.0
 #
 # Required ENV vars:
 # ------------------
@@ -58,7 +58,7 @@ case "$(uname)" in
   MINGW*) mingw=true;;
   Darwin*) darwin=true
     # Use /usr/libexec/java_home if available, otherwise fall back to /Library/Java/Home
-    # See https://developer.apple.com/library/mac/qa/qa1170/_index.html
+    # See https://developer.batchle.com/library/mac/qa/qa1170/_index.html
     if [ -z "$JAVA_HOME" ]; then
       if [ -x "/usr/libexec/java_home" ]; then
         JAVA_HOME="$(/usr/libexec/java_home)"; export JAVA_HOME
@@ -184,52 +184,52 @@ MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-"$BASE_DIR"}; export MAVEN_PROJECTBASEDIR
 log "$MAVEN_PROJECTBASEDIR"
 
 ##########################################################################################
-# Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
-# This allows using the maven wrapper in projects that prohibit checking in binary data.
+# Extension to allow automatically downloading the maven-wrbatcher.jar from Maven-central
+# This allows using the maven wrbatcher in projects that prohibit checking in binary data.
 ##########################################################################################
-wrapperJarPath="$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar"
-if [ -r "$wrapperJarPath" ]; then
-    log "Found $wrapperJarPath"
+wrbatcherJarPath="$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/maven-wrbatcher.jar"
+if [ -r "$wrbatcherJarPath" ]; then
+    log "Found $wrbatcherJarPath"
 else
-    log "Couldn't find $wrapperJarPath, downloading it ..."
+    log "Couldn't find $wrbatcherJarPath, downloading it ..."
 
     if [ -n "$MVNW_REPOURL" ]; then
-      wrapperUrl="$MVNW_REPOURL/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
+      wrbatcherUrl="$MVNW_REPOURL/org/apache/maven/wrbatcher/maven-wrbatcher/3.2.0/maven-wrbatcher-3.2.0.jar"
     else
-      wrapperUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
+      wrbatcherUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrbatcher/maven-wrbatcher/3.2.0/maven-wrbatcher-3.2.0.jar"
     fi
     while IFS="=" read -r key value; do
       # Remove '\r' from value to allow usage on windows as IFS does not consider '\r' as a separator ( considers space, tab, new line ('\n'), and custom '=' )
       safeValue=$(echo "$value" | tr -d '\r')
-      case "$key" in (wrapperUrl) wrapperUrl="$safeValue"; break ;;
+      case "$key" in (wrbatcherUrl) wrbatcherUrl="$safeValue"; break ;;
       esac
-    done < "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.properties"
-    log "Downloading from: $wrapperUrl"
+    done < "$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/maven-wrbatcher.properties"
+    log "Downloading from: $wrbatcherUrl"
 
     if $cygwin; then
-      wrapperJarPath=$(cygpath --path --windows "$wrapperJarPath")
+      wrbatcherJarPath=$(cygpath --path --windows "$wrbatcherJarPath")
     fi
 
     if command -v wget > /dev/null; then
         log "Found wget ... using wget"
         [ "$MVNW_VERBOSE" = true ] && QUIET="" || QUIET="--quiet"
         if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
-            wget $QUIET "$wrapperUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"
+            wget $QUIET "$wrbatcherUrl" -O "$wrbatcherJarPath" || rm -f "$wrbatcherJarPath"
         else
-            wget $QUIET --http-user="$MVNW_USERNAME" --http-password="$MVNW_PASSWORD" "$wrapperUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"
+            wget $QUIET --http-user="$MVNW_USERNAME" --http-password="$MVNW_PASSWORD" "$wrbatcherUrl" -O "$wrbatcherJarPath" || rm -f "$wrbatcherJarPath"
         fi
     elif command -v curl > /dev/null; then
         log "Found curl ... using curl"
         [ "$MVNW_VERBOSE" = true ] && QUIET="" || QUIET="--silent"
         if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
-            curl $QUIET -o "$wrapperJarPath" "$wrapperUrl" -f -L || rm -f "$wrapperJarPath"
+            curl $QUIET -o "$wrbatcherJarPath" "$wrbatcherUrl" -f -L || rm -f "$wrbatcherJarPath"
         else
-            curl $QUIET --user "$MVNW_USERNAME:$MVNW_PASSWORD" -o "$wrapperJarPath" "$wrapperUrl" -f -L || rm -f "$wrapperJarPath"
+            curl $QUIET --user "$MVNW_USERNAME:$MVNW_PASSWORD" -o "$wrbatcherJarPath" "$wrbatcherUrl" -f -L || rm -f "$wrbatcherJarPath"
         fi
     else
         log "Falling back to using Java to download"
-        javaSource="$MAVEN_PROJECTBASEDIR/.mvn/wrapper/MavenWrapperDownloader.java"
-        javaClass="$MAVEN_PROJECTBASEDIR/.mvn/wrapper/MavenWrapperDownloader.class"
+        javaSource="$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/MavenWrbatcherDownloader.java"
+        javaClass="$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/MavenWrbatcherDownloader.class"
         # For Cygwin, switch paths to Windows format before running javac
         if $cygwin; then
           javaSource=$(cygpath --path --windows "$javaSource")
@@ -237,12 +237,12 @@ else
         fi
         if [ -e "$javaSource" ]; then
             if [ ! -e "$javaClass" ]; then
-                log " - Compiling MavenWrapperDownloader.java ..."
+                log " - Compiling MavenWrbatcherDownloader.java ..."
                 ("$JAVA_HOME/bin/javac" "$javaSource")
             fi
             if [ -e "$javaClass" ]; then
-                log " - Running MavenWrapperDownloader.java ..."
-                ("$JAVA_HOME/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$wrapperUrl" "$wrapperJarPath") || rm -f "$wrapperJarPath"
+                log " - Running MavenWrbatcherDownloader.java ..."
+                ("$JAVA_HOME/bin/java" -cp .mvn/wrbatcher MavenWrbatcherDownloader "$wrbatcherUrl" "$wrbatcherJarPath") || rm -f "$wrbatcherJarPath"
             fi
         fi
     fi
@@ -251,31 +251,31 @@ fi
 # End of extension
 ##########################################################################################
 
-# If specified, validate the SHA-256 sum of the Maven wrapper jar file
-wrapperSha256Sum=""
+# If specified, validate the SHA-256 sum of the Maven wrbatcher jar file
+wrbatcherSha256Sum=""
 while IFS="=" read -r key value; do
-  case "$key" in (wrapperSha256Sum) wrapperSha256Sum=$value; break ;;
+  case "$key" in (wrbatcherSha256Sum) wrbatcherSha256Sum=$value; break ;;
   esac
-done < "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.properties"
-if [ -n "$wrapperSha256Sum" ]; then
-  wrapperSha256Result=false
+done < "$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/maven-wrbatcher.properties"
+if [ -n "$wrbatcherSha256Sum" ]; then
+  wrbatcherSha256Result=false
   if command -v sha256sum > /dev/null; then
-    if echo "$wrapperSha256Sum  $wrapperJarPath" | sha256sum -c > /dev/null 2>&1; then
-      wrapperSha256Result=true
+    if echo "$wrbatcherSha256Sum  $wrbatcherJarPath" | sha256sum -c > /dev/null 2>&1; then
+      wrbatcherSha256Result=true
     fi
   elif command -v shasum > /dev/null; then
-    if echo "$wrapperSha256Sum  $wrapperJarPath" | shasum -a 256 -c > /dev/null 2>&1; then
-      wrapperSha256Result=true
+    if echo "$wrbatcherSha256Sum  $wrbatcherJarPath" | shasum -a 256 -c > /dev/null 2>&1; then
+      wrbatcherSha256Result=true
     fi
   else
     echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available."
-    echo "Please install either command, or disable validation by removing 'wrapperSha256Sum' from your maven-wrapper.properties."
+    echo "Please install either command, or disable validation by removing 'wrbatcherSha256Sum' from your maven-wrbatcher.properties."
     exit 1
   fi
-  if [ $wrapperSha256Result = false ]; then
-    echo "Error: Failed to validate Maven wrapper SHA-256, your Maven wrapper might be compromised." >&2
-    echo "Investigate or delete $wrapperJarPath to attempt a clean download." >&2
-    echo "If you updated your Maven version, you need to update the specified wrapperSha256Sum property." >&2
+  if [ $wrbatcherSha256Result = false ]; then
+    echo "Error: Failed to validate Maven wrbatcher SHA-256, your Maven wrbatcher might be compromised." >&2
+    echo "Investigate or delete $wrbatcherJarPath to attempt a clean download." >&2
+    echo "If you updated your Maven version, you need to update the specified wrbatcherSha256Sum property." >&2
     exit 1
   fi
 fi
@@ -297,12 +297,12 @@ fi
 MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $*"
 export MAVEN_CMD_LINE_ARGS
 
-WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+WRAPPER_LAUNCHER=org.apache.maven.wrbatcher.MavenWrbatcherMain
 
 # shellcheck disable=SC2086 # safe args
 exec "$JAVACMD" \
   $MAVEN_OPTS \
   $MAVEN_DEBUG_OPTS \
-  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
+  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrbatcher/maven-wrbatcher.jar" \
   "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
